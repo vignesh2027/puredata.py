@@ -3,7 +3,7 @@ requires = ["hatchling>=1.21.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "puredata"
+name = "puredatalib"
 version = "0.1.0"
 description = "Automatic data cleaning and silent incompatibility detection for Python"
 readme = "README.md"
