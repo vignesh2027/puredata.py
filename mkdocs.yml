@@ -1,0 +1,53 @@
+site_name: puredata
+site_description: Automatic data cleaning and silent incompatibility detection
+site_url: https://github.com/vignesh2027/puredata.py
+repo_url: https://github.com/vignesh2027/puredata.py
+repo_name: vignesh2027/puredata.py
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: cyan
+    accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - content.code.annotate
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: numpy
+            show_source: true
+            show_root_heading: true
+
+nav:
+  - Home: index.md
+  - Tutorials:
+    - Beginner: tutorials/beginner.md
+    - Advanced: tutorials/advanced.md
+  - API Reference:
+    - puredata.clean: api/clean.md
+    - puredata.watch: api/watch.md
+    - puredata.check: api/check.md
+    - puredata.dashboard: api/dashboard.md
+    - MendPipeline: api/pipeline.md
+    - Reports: api/reports.md
+    - Plugins: api/plugins.md
+  - Plugin Development: plugins.md
+  - Integrations: integrations.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
