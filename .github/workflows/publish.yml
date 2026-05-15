@@ -55,32 +55,10 @@ jobs:
           name: dist
           path: dist/
 
-  # ── 3. Publish to TestPyPI (always on tag) ───────────────────────────────────
-  publish-testpypi:
-    name: Publish to TestPyPI
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: testpypi
-      url: https://test.pypi.org/p/puredata
-    permissions:
-      id-token: write  # Required for trusted publishing
-    steps:
-      - name: Download dist artifacts
-        uses: actions/download-artifact@v4.3.0
-        with:
-          name: dist
-          path: dist/
-
-      - name: Publish to TestPyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          repository-url: https://test.pypi.org/legacy/
-
-  # ── 4. Publish to PyPI (production) ──────────────────────────────────────────
+  # ── 3. Publish to PyPI (production) ──────────────────────────────────────────
   publish-pypi:
     name: Publish to PyPI
-    needs: publish-testpypi
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: pypi
