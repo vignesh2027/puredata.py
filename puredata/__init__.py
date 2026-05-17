@@ -36,8 +36,8 @@ from puredata.api import (
     watch,
 )
 
-__version__ = "0.1.0"
-__author__ = "puredata contributors"
+__version__ = "0.2.0"
+__author__ = "Vignesh"
 __license__ = "MIT"
 
 __all__ = [
